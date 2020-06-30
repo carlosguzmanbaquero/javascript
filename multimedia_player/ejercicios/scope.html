@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Scope</title>
+</head>
+
+<body>
+    <a href="/ejercicios/">ir atras</a>
+    <p><em>Abre la consola</em></p>
+
+    <script>
+        //global scope
+        var message='hola';
+        var $ = function(message){
+            console.log('hola '+message);
+        }
+
+        //error de scope
+        function printNumbers(){
+            for(var i=0;i<10;i++){
+                setTimeout(() => {
+                    console.log(i);
+                }, 100);
+            }
+        }
+        //printNumbers();
+        
+
+        //function scope 
+        function printNumbers2(){
+            for(var i=0;i<10;i++){
+                function printNum(n) {
+                    setTimeout(() => {
+                        console.log(n);
+                    }, 100);
+                }
+                printNum(i);
+            }
+        }
+        //printNumbers2();
+ 
+        //block scope
+        function printNumbers3(){
+            for(let i=0;i<10;i++){
+                setTimeout(() => {
+                    console.log(i);
+                }, 100);
+            }
+        }
+        printNumbers3();
+
+        
+        
+    </script>
+</body>
+
+</html>
