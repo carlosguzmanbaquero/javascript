@@ -1,0 +1,68 @@
+<html>
+
+<body>
+    <a href="/ejercicios/">ir atrás</a>
+    <p><em>Abre la consola</em></p>
+
+    <script>
+        //iife
+        (function() {
+            let color = 'green';
+
+            function printColor() {
+                console.log(color);
+            }
+
+            printColor();
+
+        })();
+
+        //funciones que regresan funciones
+        function makeColorPrinter(color){
+            let colorMessage=`El color es ${color}`;
+            return function(){
+                console.log(colorMessage);
+            }
+        }
+
+        let greenColorPrinter = makeColorPrinter('verde');
+        greenColorPrinter();
+
+        //variables privadas
+        const counter = {
+            count:3,
+        }
+        console.log(counter.count);
+        counter.count=85;
+        console.log(counter.count);
+
+        //no permitir modificar propiedades
+        function makeCounter(n){
+            let count = n;
+            
+            return {
+                increase: function(){
+                    count = count +1;
+                },
+                decrease: function(){
+                    count = count -1;
+                },
+                getCount: function(){
+                    return count;
+                },
+            };
+        }
+
+        let counter2 = makeCounter(7);
+        console.log('la cuenta es: ', counter2.getCount());
+        counter2.increase();
+        console.log('la cuenta es: ', counter2.getCount());
+        counter2.decrease();
+        counter2.decrease();
+        console.log('la cuenta es: ', counter2.getCount());
+        counter2.count=3; //mo permite editar el valor
+        console.log('editado la cuenta es: ', counter2.getCount());
+    </script>
+</body>
+
+</html>
