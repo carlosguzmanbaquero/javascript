@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>Scope</title>
+</head>
+
+<body>
+    <a href="/ejercicios/">ir atras</a>
+    <p><em>Abre la consola</em></p>
+
+    <ul>
+      <li><button class="call-to-action">Aprender</button></li>
+      <li><button class="call-to-action">Aprender Más</button></li>
+      <li><button class="call-to-action">¡Nunca parar de Aprender!</button></li>
+    </ul>
+    <script>
+       //establece this usando call
+       function saludar(){
+           console.log(`hola soy ${this.nombre} ${this.apellido}`);
+       }
+
+       const carlos={
+           nombre:'carlos',
+           apellido:'guzman',
+       };
+
+       saludar.call(carlos);
+
+       //establece this usando call y pasando parametros a la funcion
+       function perro(nombre, edad){
+           console.log(`${this.nombre} tiene un perro llamado ${nombre} de ${edad} año`);
+       }
+
+       perro.call(carlos, 'spike',1);
+       
+       //establece this usando apply y pasando parametros a la funcion
+       const parametros=['spike',1];
+       perro.apply(carlos, parametros);
+       saludar.apply(carlos);
+
+       //establece this usando bind y pasando parametros a la funcion
+       const carlosSaluda=saludar.bind(carlos);
+       carlosSaluda();
+
+       const carlosTieneUnPerro=perro.bind(carlos);
+       carlosTieneUnPerro('spike',1.5);
+
+       const carlosTieneUnPerro2=perro.bind(carlos,'spike',1.6);//envia parametros parciales
+       carlosTieneUnPerro2();
+
+       const carlosTieneUnPerro3=perro.bind(carlos,'spike');
+       carlosTieneUnPerro3(1.7);
+
+       //cuando es util usar alguno de estos metodos
+       const buttons = document.getElementsByClassName('call-to-action');
+       /* error no tiene la funcion forech
+       buttons.forEach(element => {
+           element.onClick = () => alert('prueba');
+       });
+       */
+
+       //console.log(buttons);
+       //nodelist
+      Array.prototype.forEach.call(buttons, (button) => {
+        button.onclick = () => alert('prueba');
+       });
+
+    </script>
+</body>
+
+</html>

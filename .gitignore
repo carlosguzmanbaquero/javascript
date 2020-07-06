@@ -1,2 +1,4 @@
 *.mp4
 multimedia_player/node_modules
+multimedia_player/dist
+multimedia_player/.cache
