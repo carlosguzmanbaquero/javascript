@@ -1,0 +1,24 @@
+//Instalación de TypeScript
+npm install -g typescript
+
+//Consultar la versión del compilador de TS
+tsc -v
+
+//Compilar nuestros ficheros .ts
+tsc your_file.ts
+
+//Compilar de manera ‘automática’ nuestros ficheros .ts
+tsc --watch your_file.ts
+
+//ejecutar javascript
+node archivo.js
+
+//intalar ts-loader
+npm install ts-loader --save-dev
+
+//instalar webpack
+npm install typescript webpack webpack-cli --save-dev
+
+//ejecutar app con la configuracion del webpack
+npm run build
+
