@@ -21,3 +21,18 @@ npm install --save-dev onchange@3.3.0 parallelshell@3.0.2
 
 //corregir error parallelshell
 https://stackoverflow.com/questions/53461626/problem-running-parallelshell-nodejs-script
+
+//instalar rimraf
+npm install --save-dev rimraf@2.6.2
+
+//copyfiles
+npm -g install copyfiles@2.0.0
+
+//imagemin
+npm -g install imagemin-cli@3.0.0
+npm install -g imagemin-cli@3.0.0 --unsafe-perm=true --allow-root
+
+//usemin
+npm install --save-dev usemin-cli@0.5.1 cssmin@0.4.3 uglifyjs@2.4.11 htmlmin@0.0.7
+
+npm run build
