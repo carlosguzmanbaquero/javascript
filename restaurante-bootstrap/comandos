@@ -15,3 +15,9 @@ lessc styles.less styles.css
 //instalar sass
 npm install --save-dev node-sass@4.7.2
 npm run scss
+
+//instalar parallelshell
+npm install --save-dev onchange@3.3.0 parallelshell@3.0.2
+
+//corregir error parallelshell
+https://stackoverflow.com/questions/53461626/problem-running-parallelshell-nodejs-script
