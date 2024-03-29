@@ -1,2 +1,2 @@
 # javascript
-prueba1
+prueba2
